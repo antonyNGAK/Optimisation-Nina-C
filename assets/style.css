@@ -1,3 +1,4 @@
+/*Style de base du site*/
 body {
 	max-width: 1920px;
 	margin: auto;
@@ -243,7 +244,7 @@ input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
 }
-
+ /*Adaptation à d'autres types d'écrans*/
 @media all and (max-width: 1180px) {
 	.picture {
 		flex : 2;
