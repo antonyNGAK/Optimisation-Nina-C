@@ -229,7 +229,8 @@ form textarea {
 #services .container {
     justify-content: space-between;
     display: flex;
-    padding: 2em 0
+	padding : 2em 0;
+
 }
 
 .service {
