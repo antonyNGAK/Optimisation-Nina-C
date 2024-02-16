@@ -1,3 +1,4 @@
+//Déclaration des fonctions
 (function ($) {
   $.fn.mauGallery = function (options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
@@ -113,12 +114,15 @@
         element.addClass("img-fluid");
       }
     },
+    //Déclaration des fonction de gestion de la modal
+
     openLightBox(element, lightboxId) {
       $(`#${lightboxId}`)
         .find(".lightboxImage")
         .attr("src", element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
+    // Gestion de la flèche d'image précédente
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
@@ -158,6 +162,9 @@
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(prev).attr("src"));
     },
+
+    //Gestion de la flèche d'image suivante
+
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
@@ -195,6 +202,7 @@
       next = imagesCollection[index + 1] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+    //Création de la boîte modal
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${lightboxId ? lightboxId : "galleryLightbox"
         }" tabindex="-1" role="dialog" aria-hidden="true">
@@ -232,6 +240,7 @@
         console.error(`Unknown tags position: ${position}`);
       }
     },
+    //Gestion des filtres
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
